@@ -23,7 +23,7 @@ module "vms-server" {
     key_name = var.key_name
 }
 
-module "vms-client" {
+module "vms-client-1" {
     source = "../../modules/ec2"
     instance_type = var.instance_type
     instance_tag  = var.instance_tag_client
@@ -32,7 +32,7 @@ module "vms-client" {
 }
 
 
-module "vms-client" {
+module "vms-client-2" {
     source = "../../modules/ec2"
     instance_type = var.instance_type
     instance_tag  = var.instance_tag_client_2
