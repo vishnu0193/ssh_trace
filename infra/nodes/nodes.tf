@@ -59,6 +59,7 @@ filter {
     module.vms-client-1
   ]
 }
+## Copying the source code to the backend server
 resource "null_resource" "ec2-ssh-connection" {
   provisioner "file" {
     source      = "../../src"
@@ -74,6 +75,7 @@ resource "null_resource" "ec2-ssh-connection" {
     }
   }
 }
+# Deploying the code as cronjobs
 resource "null_resource" "ec2-ssh-connection-script-deploy" {
     triggers = {
     always_run = timestamp()
@@ -96,6 +98,7 @@ resource "null_resource" "ec2-ssh-connection-script-deploy" {
     ]
   }
 }
+# copying the pem files for client communications to server
 resource "null_resource" "ec2-ssh-key-copy-client-1" {
   provisioner "file" {
     source      = "~/xxxx/xxx.pem"
@@ -112,6 +115,7 @@ resource "null_resource" "ec2-ssh-key-copy-client-1" {
   }
 }
 
+# Performing ssh from the client to the server
 resource "null_resource" "ec2-ssh-connection-client-1" {
  triggers = {
     always_run = timestamp()
@@ -138,6 +142,7 @@ resource "time_sleep" "wait_60" {
   create_duration = "60s"
 }
 
+# Displays the output of the attempts made by the client on the server
 resource "null_resource" "display-output" {
   triggers = {
     always_run = timestamp()
