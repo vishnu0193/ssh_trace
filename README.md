@@ -26,3 +26,9 @@ Implementation:
 Backup mechanism:
 
 1. We can save the logs in storage bucket s3 or in any centralized locations in the cloud and run a maintenance script which cleans up the old log entries.
+
+Below screenshot provides the ssh logging output at the end. 
+
+![Screenshot 2022-01-28 at 5 47 40 AM](https://user-images.githubusercontent.com/60593526/151464851-1bb7c272-6ee8-4ecd-b192-5cb99d14f1d3.png)
+
+
