@@ -23,3 +23,6 @@ Implementation:
 1. Navigate to infra/nodes and just execute the terraform plan and terraform apply
 2. This will not only create the infrastructure but also deploy the required scripts and displays the ssh logging output in the console
 
+Backup mechanism:
+
+1. We can save the logs in storage bucket s3 or in any centralized locations in the cloud and run a maintenance script which cleans up the old log entries.
